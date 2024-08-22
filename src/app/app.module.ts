@@ -5,10 +5,12 @@ import { RouterModule } from "@angular/router";
 
 import { AppComponent } from "./app.component";
 import { routes } from "./app-routing.module";
+import { WeatherCardComponent } from './weather-card/weather-card.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        WeatherCardComponent,
     ],
     imports: [
         BrowserModule,
