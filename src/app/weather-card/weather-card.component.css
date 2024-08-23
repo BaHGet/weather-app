@@ -1,3 +1,23 @@
+#clear-sky{
+    background: linear-gradient(0deg, rgba(63,70,80,1) 22%, rgba(165,184,217,1) 54%);
+    .weather-details{
+        background-color: #95accfc2;
+    }
+    .weather-details-info>h6, .sun-state>h6{
+        color: #bcd1f0;
+    }
+}
+#sunny{
+    background: linear-gradient(0deg, rgba(92,91,60,1) 5%, rgba(235,229,150,1) 66%);
+    .weather-details{
+        background-color: #5c5b3c;
+    }
+    .weather-details-info>h6, .sun-state>h6{
+        color: #ebe596;
+    }
+}
+
+
 h1,h2,h3,h5,h6{
     margin: 0;
 }
@@ -7,13 +27,13 @@ h1,h2,h3,h5,h6{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #a5b8d9;
     color: white;
-    width: 400px;
-    height: 500px;
+    width: 40%;
+    height: 50%;
     border-radius: 16px;
+    padding: 10% 20%;
+    margin-left: 10%;
     font-family: "Outfit", sans-serif;
-    padding-bottom: 40px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -30,16 +50,16 @@ h1,h2,h3,h5,h6{
     filter: drop-shadow(-10px 3px 13px #48505f56) !important;
 }
 .sun{
-    width: 80%;
+    width: 50vw;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 30px;
+    padding: 0% 20%;
 }
 .weather-details{
-    width: 80%;
-    background-color: #95accf;
+    width: 60vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -64,8 +84,4 @@ h1,h2,h3,h5,h6{
 .sun-state>img{
     width: 50px;
     height: 50px;
-}
-
-.weather-details-info>h6, .sun-state>h6{
-    color: rgba(255, 255, 255, 0.747);
 }
