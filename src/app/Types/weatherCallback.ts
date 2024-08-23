@@ -1,4 +1,7 @@
-export type weather = {
+export type Weather = {
+    location: { lat: number, lon: number },
+    title: string,
+    descraiption: string,
     main: {
         temp: number,
         feels_like: number,
@@ -10,6 +13,11 @@ export type weather = {
         speed: number,
         deg: number,
     },
+    sys: {
+        country: string,
+        sunrise: number,
+        sunset: number
+    }
     dt: number,
     timezone: number,
     name: string,
