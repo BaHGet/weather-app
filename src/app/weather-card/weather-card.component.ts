@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './weather-card.component.css'
 })
 export class WeatherCardComponent {
+  stata= 'clear-sky'
   cloud = '/assets/images/cloud.png';
   windSpeed = '/assets/images/wind-speed.png';
   humidity = '/assets/images/humidity.png';

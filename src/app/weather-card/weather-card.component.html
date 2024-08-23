@@ -1,16 +1,16 @@
-<div class="weather-card">
+<div class="weather-card" [id]="stata">
     <img class="weather-state-image" [src]="cloud">
     <h1>Clear Sky</h1>
     <h1>29°</h1>
     <p>H:30°     L:29°</p>
     <div class="sun">
         <div class="sun-state">
-            <img [src]="sunRise">
-            <h6>13:00</h6>
-        </div>
-        <div class="sun-state">
             <img [src]="sunSet">
             <h6>23:00</h6>
+        </div>
+        <div class="sun-state">
+            <img [src]="sunRise">
+            <h6>13:00</h6>
         </div>
     </div>
     <div class="weather-details">
@@ -30,5 +30,4 @@
             <h6>rain</h6>
         </div>
     </div>
-    
 </div>
