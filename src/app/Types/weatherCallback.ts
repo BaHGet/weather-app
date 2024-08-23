@@ -1,4 +1,4 @@
-type weather = {
+export type weather = {
     main: {
         temp: number,
         feels_like: number,
