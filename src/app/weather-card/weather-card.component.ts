@@ -27,11 +27,11 @@ export class WeatherCardComponent implements OnInit {
   wind: { speed: number ; deg: number  } = { speed: 0, deg: 0 };
   rain: { '1h': number; }= { '1h': 0 };
   icon:string= '';
-  windSpeed = '/assets/images/wind-speed.png';
-  humidityIcon = '/assets/images/humidity.png';
-  cloudIcon = '/assets/images/cloud-icon.png';
-  sunSet = '/assets/images/sun-set.png';
-  sunRise = '/assets/images/sun-rise.png';
+  windSpeed = 'weather-app/assets/images/wind-speed.png';
+  humidityIcon = 'weather-app/assets/images/humidity.png';
+  cloudIcon = 'weather-app/assets/images/cloud-icon.png';
+  sunSet = 'weather-app/assets/images/sun-set.png';
+  sunRise = 'weather-app/assets/images/sun-rise.png';
 
   constructor(private weatherService: WeatherApiService) { }
 
