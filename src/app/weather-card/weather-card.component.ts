@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherApiService } from '../services/weather-api.service';
+import { WeatherApiService } from '../services/weather/weather-api.service';
 import { GeoLocation } from '../Types/GeoLocation';
 import dayjs from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
@@ -11,7 +11,6 @@ import { Weather } from '../Types/weatherCallback';
   styleUrl: './weather-card.component.css'
 })
 export class WeatherCardComponent implements OnInit {
-  stata= 'clear-sky'
   title:string = ''
   descraiption:string = ''
   city = '';
@@ -27,7 +26,7 @@ export class WeatherCardComponent implements OnInit {
   humidity: number = 0;
   wind: { speed: number ; deg: number  } = { speed: 0, deg: 0 };
   rain: { '1h': number; }= { '1h': 0 };
-  cloud = '/assets/images/cloud.png';
+  icon:string= '';
   windSpeed = '/assets/images/wind-speed.png';
   humidityIcon = '/assets/images/humidity.png';
   cloudIcon = '/assets/images/cloud-icon.png';
@@ -55,9 +54,9 @@ export class WeatherCardComponent implements OnInit {
   }
 
   getDetails(data:any) {
-    
     this.title = data.title
     this.descraiption = data.descraiption
+    this.icon = `https://openweathermap.org/img/wn/${data.icon}@2x.png`
     this.city = data.name
     this.time = dayjs(data.dt).format('HH:mm')
     this.date = dayjs(data.dt).format('dddd[,] Do [of] MMMM ')
@@ -76,8 +75,6 @@ export class WeatherCardComponent implements OnInit {
     this.rain = {
       '1h': data.rain['1h'] || 0
     }
-    this.cloud = `/assets/images/${data.weather[0].icon}.png`
-    this.stata = data.weather[0].icon
   }
 
   ngOnInit(): void {
