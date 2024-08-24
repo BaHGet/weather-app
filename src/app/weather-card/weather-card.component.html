@@ -1,4 +1,5 @@
-<div class="weather-card" [id]="temp <= 30 ? 'clear-sky' : 'sunny'">
+<div *ngIf="weather" class="weather-card"
+    [id]="temp <= 30 ? 'clear-sky' : 'sunny'">
     <h3>{{city}}</h3>
     <h5>{{date}}</h5>
     <h5>{{time}} {{timezone}}</h5>
@@ -9,7 +10,7 @@
     <h5>{{descraiption}}</h5>
     <h1>{{temp | temperature}}</h1>
     <p *ngIf="temp !== temp_min || temp !== temp_max">
-        H:{{temp_max |temperature}}  &#160;&#160; L:{{temp_min | temperature}}
+        H:{{temp_max |temperature}} &#160;&#160; L:{{temp_min | temperature}}
     </p>
     <div class="sun">
         <div class="sun-state">
@@ -35,6 +36,130 @@
         <div *ngIf="rain" class="weather-details-info">
             <img [src]="cloudIcon">
             <h3>{{rain['1h'] | percent}}</h3>
+            <h6>rain</h6>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="!weather" class="weather-card" [id]="temp <= 30 ? 'clear-sky' : 'sunny'">
+    <h3>
+        <ngx-skeleton-loader
+            [theme]="{ 
+                'border-radius': '5px',
+                'height': '20px',
+                'width': '200px',
+                'margin': '0',
+                'background-color': 'transparent'
+            }"
+        ></ngx-skeleton-loader>
+    </h3>
+    <h5>
+        <ngx-skeleton-loader
+        [theme]="{ 
+            'border-radius': '5px',
+            'height': '15px',
+            'width': '150px',
+            'margin': '0',
+            'background-color': 'transparent'
+        }"></ngx-skeleton-loader>
+    </h5>
+    <h5>
+        <ngx-skeleton-loader
+        [theme]="{ 
+            'border-radius': '5px',
+            'height': '10px',
+            'width': '180px',
+            'margin': '0',
+            'background-color': 'transparent'
+        }"></ngx-skeleton-loader>
+    </h5>
+    <div class="weather-state-image-container">
+        <ngx-skeleton-loader count="1" appearance="circle"
+            [theme]="{
+                'height': '190px',
+                'width': '190px',
+                'margin': '0',
+                'background-color': 'transparent'
+        }"></ngx-skeleton-loader>
+    </div>
+    <h1><ngx-skeleton-loader
+        [theme]="{ 
+            'border-radius': '5px',
+            'height': '30px',
+            'width': '30px',
+            'margin': '0',
+            'background-color': 'transparent'
+        }"></ngx-skeleton-loader>°C</h1>
+    <div class="sun">
+        <div class="sun-state">
+            <img [src]="sunSet">
+            <h6>
+                <ngx-skeleton-loader
+                [theme]="{ 
+                    'border-radius': '5px',
+                    'height': '10px',
+                    'width': '40px',
+                    'margin': '0',
+                    'background-color': 'transparent'
+                }"></ngx-skeleton-loader>
+            </h6>
+        </div>
+        <div class="sun-state">
+            <img [src]="sunRise">
+            <h6>
+                <ngx-skeleton-loader
+                [theme]="{ 
+                    'border-radius': '5px',
+                    'height': '10px',
+                    'width': '40px',
+                    'margin': '0',
+                    'background-color': 'transparent'
+                }"></ngx-skeleton-loader>
+            </h6>
+        </div>
+    </div>
+    <div class="weather-details">
+        <div class="weather-details-info">
+            <img [src]="windSpeed">
+            <h3>
+                <ngx-skeleton-loader
+                [theme]="{ 
+                    'border-radius': '5px',
+                    'height': '10px',
+                    'width': '40px',
+                    'margin': '0',
+                    'background-color': 'transparent'
+                }"></ngx-skeleton-loader>
+            </h3>
+            <h6>Wind</h6>
+        </div>
+        <div class="weather-details-info">
+            <img [src]="humidityIcon">
+            <h3>
+                <ngx-skeleton-loader 
+                [theme]="{ 
+                    'border-radius': '5px',
+                    'height': '10px',
+                    'width': '40px',
+                    'margin': '0',
+                    'background-color': 'transparent'
+                }"></ngx-skeleton-loader>
+            </h3>
+            <h6>Humidity</h6>
+        </div>
+        <div *ngIf="rain" class="weather-details-info">
+            <img [src]="cloudIcon">
+            <h3>
+                <ngx-skeleton-loader
+                [theme]="{ 
+                    'border-radius': '5px',
+                    'height': '10px',
+                    'width': '40px',
+                    'margin': '0',
+                    'background-color': 'transparent'
+                }"></ngx-skeleton-loader>
+            </h3>
             <h6>rain</h6>
         </div>
     </div>

@@ -22,8 +22,6 @@
         color: #e0db8d;
     }
 }
-
-
 h1,h2,h3,h5,h6{
     margin: 0;
 }
@@ -50,6 +48,9 @@ h1,h2,h3,h5,h6{
 .weather-state-image-container{
     width: 200px;
     height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .weather-state-image{
@@ -95,4 +96,10 @@ h1,h2,h3,h5,h6{
 .sun-state>img{
     width: 50px;
     height: 50px;
+}
+
+ngx-skeleton-loader>div{
+    background: transparent !important;
+    width: 70px !important;
+    height: 10px !important;
 }

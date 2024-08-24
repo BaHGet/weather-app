@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "deploy":"ng deploy --repo=https://github.com/BaHGet/weather-app.git --name=\"BaHGet\"",
+    "deploy": "ng deploy --repo=https://github.com/BaHGet/weather-app.git --name=\"BaHGet\"",
     "test": "ng test"
   },
   "private": true,
@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
     "dayjs": "^1.11.13",
+    "ngx-skeleton-loader": "^9.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

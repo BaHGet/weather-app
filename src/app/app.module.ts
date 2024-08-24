@@ -9,6 +9,7 @@ import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { HttpClientModule } from "@angular/common/http";
 import { Temperature } from "./Pipes/Temperature.pipe";
 import { Diraction } from "./Pipes/Diraction.pipe";
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { Diraction } from "./Pipes/Diraction.pipe";
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        NgxSkeletonLoaderModule,
         RouterModule.forRoot(routes)
     ],
     providers: [],
