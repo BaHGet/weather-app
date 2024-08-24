@@ -1,5 +1,6 @@
 #clear-sky{
-    background: linear-gradient(0deg, rgba(63,70,80,1) 22%, rgba(165,184,217,1) 54%);
+    background: linear-gradient(0deg, #3f4650 22%, #a5b8d9 54%);
+    color: white;
     .weather-details{
         background-color: #95accfc2;
     }
@@ -9,11 +10,16 @@
 }
 #sunny{
     background: linear-gradient(0deg, rgba(92,91,60,1) 5%, rgba(235,229,150,1) 66%);
+    color: #4b4629;
     .weather-details{
         background-color: #5c5b3c;
+        
+    }
+    .weather-details-info>h3{
+        color: #dad2af !important;
     }
     .weather-details-info>h6, .sun-state>h6{
-        color: #ebe596;
+        color: #e0db8d;
     }
 }
 
@@ -41,12 +47,17 @@ h1,h2,h3,h5,h6{
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
-
-.weather-state-image{
+.weather-state-image-container{
     width: 200px;
     height: 200px;
+}
+
+.weather-state-image{
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    filter: grayscale(100%) !important;
     display: inline-block;
-    position: relative;
     filter: drop-shadow(-10px 3px 13px #48505f56) !important;
 }
 .sun{
