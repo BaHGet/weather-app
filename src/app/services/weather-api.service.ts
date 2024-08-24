@@ -47,6 +47,7 @@ export class WeatherApiService {
             location: { lat: lat, lon: lon },
             title: data.weather[0].main,
             descraiption: data.weather[0].description,
+            icon:data.weather[0].icon,
             main: {
               temp: data.main.temp,
               feels_like: data.main.feels_like,
