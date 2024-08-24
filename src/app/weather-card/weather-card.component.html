@@ -1,32 +1,38 @@
 <div class="weather-card" [id]="stata">
+    <h3>{{city}}</h3>
+    <h5>{{date}}</h5>
+    <h5>{{time}} {{timezone}}</h5>
     <img class="weather-state-image" [src]="cloud">
-    <h1>Clear Sky</h1>
-    <h1>29°</h1>
-    <p>H:30°     L:29°</p>
+    <h1>{{title}}</h1>
+    <h5>{{descraiption}}</h5>
+    <h1>{{temp | temperature}}</h1>
+    <p *ngIf="temp !== temp_min || temp !== temp_max">
+        H:{{temp_max |temperature}} L:{{temp_min | temperature}}
+    </p>
     <div class="sun">
         <div class="sun-state">
             <img [src]="sunSet">
-            <h6>23:00</h6>
+            <h6>{{sunset}}</h6>
         </div>
         <div class="sun-state">
             <img [src]="sunRise">
-            <h6>13:00</h6>
+            <h6>{{sunrise}}</h6>
         </div>
     </div>
     <div class="weather-details">
         <div class="weather-details-info">
             <img [src]="windSpeed">
-            <h3>4.21</h3>
+            <h3>{{wind.speed}} m/s, {{wind.deg | diraction}}</h3>
             <h6>Wind</h6>
         </div>
         <div class="weather-details-info">
-            <img [src]="humidity" >
-            <h3>4.21</h3>
+            <img [src]="humidityIcon">
+            <h3>{{humidity}}%</h3>
             <h6>Humidity</h6>
         </div>
-        <div class="weather-details-info">
+        <div *ngIf="rain" class="weather-details-info">
             <img [src]="cloudIcon">
-            <h3>4.21</h3>
+            <h3>{{rain['1h'] | percent}}</h3>
             <h6>rain</h6>
         </div>
     </div>
