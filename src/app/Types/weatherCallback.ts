@@ -2,6 +2,7 @@ export type Weather = {
     location: { lat: number, lon: number },
     title: string,
     descraiption: string,
+    icon: string,
     main: {
         temp: number,
         feels_like: number,
